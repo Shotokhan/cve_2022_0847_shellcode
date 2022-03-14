@@ -3,8 +3,8 @@
 ## Description
 
 This repository contains a Python script (```gen_shellcode.py```), based on pwntools, to generate a shellcode implementing [CVE-2022-0847](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0847). <br>
-The shellcode is based on this Poc: [](https://github.com/antx-code/CVE-2022-0847). <br>
-I analyzed the code of the PoC and its execution with strace to catch all the system calls required to make the exploit, and at first I wrote a C program that uses ```syscall.h```; it was still not suitable for a shellcode, but it's good for reference, so I shipped it there (```tiny_cve-2022-0847.c```). <br>
+The shellcode is based on this Poc: [antx](https://github.com/antx-code/CVE-2022-0847). <br>
+I analyzed the code of the PoC and its execution with strace to catch all the system calls required to make the exploit, and at first I wrote a C program that uses ```syscall.h```; it was still not suitable for a shellcode, but it's good for reference, so I shipped it here (```tiny_cve-2022-0847.c```). <br>
 The function which generates the shellcode takes 3 parameters: path of the file to write to, data to write and offset at which data must be written. <br>
 An example of generated shellcode, in disassemble format from objdump, can be found in ```shellcode.asm```; it was generated with the following parameters:
 
